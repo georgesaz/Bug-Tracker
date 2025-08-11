@@ -6,6 +6,7 @@ pool:
 
 steps:
   - checkout: self
+    clean: true
 
   - task: UsePythonVersion@0
     inputs:
@@ -18,8 +19,8 @@ steps:
       pip install pytest
     displayName: 'Install dependencies'
 
-  - script: ls -l
-    displayName: 'List files in working directory'
+  - script: ls -l tests
+    displayName: 'List tests directory contents'
 
   - script: pytest tests/
     displayName: 'Run tests'
