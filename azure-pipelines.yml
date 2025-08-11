@@ -1,7 +1,6 @@
 trigger:
   - main
 
-
 pool:
   name: Default
 
@@ -18,6 +17,9 @@ steps:
       pip install -r requirements.txt
       pip install pytest
     displayName: 'Install dependencies'
+
+  - script: ls -l
+    displayName: 'List files in working directory'
 
   - script: pytest tests/
     displayName: 'Run tests'
